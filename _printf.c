@@ -37,4 +37,21 @@ while (get_flag(ptr, &params))
 ptr++;
 }
 ptr = get_width(ptr, &params, ap);
-
+ptr = get_precision(ptr, &params, ap);
+if (get_modifier(ptr, &params))
+{
+ptr++;
+}
+if (!get_specifier(ptr))
+{
+sumofchar += print_from_to(begin, ptr, paramas.l_modifier || params.h_modifier ? ptr - 1 : 0);
+}
+else
+{
+sum += get_print_func(ptr, ap, &params);
+}
+}
+_putchar(BUF_FLUSH);
+va_end(ap);
+return (sum);
+}
