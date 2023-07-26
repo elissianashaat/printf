@@ -45,4 +45,36 @@ return (sum);
 }
 }
 
+/**
+ * print_rot13 - rot13 string printed
+ * @ap:the string
+ * @params: struct's parameters
+ * Return: no.of bytes to be printed
+ */
 
+int print_rot13(va_list ap, params_t *params)
+{
+int i;
+int j;
+int c = 0;
+char arr[] = "NOPQRSTUVWXYZABCDEFGHIJKLM   nopqrstuvwxyzabcdefghijklm";
+char *a = va_arg(ap, char *);
+(void)params;
+i = 0;
+j = 0;
+while (a[i])
+{
+if ((a[i] >= 'A' && a[i] <= 'Z') ||
+		(a[i] >= 'a' && a[i] <= 'z'))
+{
+j = a[i] - 65;
+c += _putchar(arr[j]);
+}
+else
+{
+c += _putchar(a[i]);
+}
+i++;
+}
+return (count);
+}
